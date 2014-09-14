@@ -32,7 +32,7 @@ function generate_lines(number_of_lines){
 
                     block = block[0].toUpperCase()
                       + block[1];
-                }                
+                }
 
                 lines += block;
                 number_of_letters--;
