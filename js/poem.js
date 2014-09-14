@@ -5,7 +5,8 @@ function generate(){
 
 function generate_lines(number_of_lines){
     var capitalize = true;
-    var letters = 'abcdefghijklmnopqrstuvwxyz';
+    var consonants = 'bcdfghjklmnpqrstvwxyz';
+    var vowels = 'aeiou';
     var lines = '';
     var number_of_letters = 0;
     var number_of_words = 0;
@@ -15,16 +16,18 @@ function generate_lines(number_of_lines){
         number_of_words = random_number(10) + 1;
 
         while(number_of_words > 0){
-            number_of_letters = random_number(10) + 1;
+            number_of_letters = random_number(5) + 1;
 
             while(number_of_letters > 0){
                 if(capitalize){
-                    lines += letters[random_number(26)].toUpperCase();
+                    lines += consonants[random_number(21)].toUpperCase();
                     capitalize = false;
 
                 }else{
-                    lines += letters[random_number(26)];
+                    lines += consonants[random_number(21)];
                 }
+
+                lines += vowels[random_number(5)];
 
                 number_of_letters--;
             }
