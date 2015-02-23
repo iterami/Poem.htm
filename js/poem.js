@@ -1,6 +1,6 @@
 function generate(){
     document.getElementById('poem-title').innerHTML = generate_lines(1);
-    document.getElementById('poem').innerHTML = generate_lines(random_number(10) + 1);
+    document.getElementById('poem').innerHTML = generate_lines(random_number(23) + 1);
 }
 
 function generate_lines(number_of_lines){
@@ -46,6 +46,11 @@ function generate_lines(number_of_lines){
         }
 
         lines += '.<br>';
+
+        if(Math.random() < .1){
+            lines += '<br>';
+        }
+
         number_of_lines--;
     }
 

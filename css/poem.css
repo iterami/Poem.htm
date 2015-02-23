@@ -10,3 +10,6 @@ input{
     background: #000;
     color: #aaa;
 }
+#poem-title{
+    font-size: 120%;
+}
