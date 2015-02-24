@@ -64,8 +64,6 @@ function random_number(i){
     return Math.floor(Math.random() * i);
 }
 
-window.onload = generate;
-
 window.onkeydown = function(e){
     var key = e.keyCode || e.which;
 
@@ -74,3 +72,5 @@ window.onkeydown = function(e){
         generate();
     }
 };
+
+window.onload = generate;
