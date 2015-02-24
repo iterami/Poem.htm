@@ -10,6 +10,9 @@ function generate_lines(number_of_lines){
     var lines = '';
     var number_of_letters = 0;
     var number_of_words = 0;
+    var stanza = number_of_lines > 1
+      ? .1
+      : 0;
     var vowels = 'aeiou';
 
     while(number_of_lines > 0){
@@ -47,7 +50,7 @@ function generate_lines(number_of_lines){
 
         lines += '.<br>';
 
-        if(Math.random() < .1){
+        if(stanza > Math.random()){
             lines += '<br>';
         }
 
@@ -62,3 +65,12 @@ function random_number(i){
 }
 
 window.onload = generate;
+
+window.onkeydown = function(e){
+    var key = e.keyCode || e.which;
+
+    // Enter: generate()
+    if(key === 13){
+        generate();
+    }
+};
