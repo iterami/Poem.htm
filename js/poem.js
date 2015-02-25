@@ -22,6 +22,10 @@ function generate_lines(number_of_lines){
         while(number_of_words > 0){
             number_of_letters = random_number(5) + 1;
 
+            if(Math.random() < .1){
+                capitalize = true;
+            }
+
             while(number_of_letters > 0){
                 block = consonants[random_number(21)]
                   + vowels[random_number(5)];
