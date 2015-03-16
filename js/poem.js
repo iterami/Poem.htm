@@ -63,9 +63,17 @@ function generate_lines(number_of_lines, line, maximum_words_per_line){
             number_of_words--;
         }
 
-        // Only add a period for poem lines.
+        // Only add punctuation to lines.
         if(line){
-            lines += '.';
+            if(Math.random() < .1){
+                lines += '!';
+
+            }else if(Math.random() < .1){
+                lines += '?';
+
+            }else{
+                lines += '.';
+            }
         }
 
         lines += '<br>';
