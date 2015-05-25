@@ -12,6 +12,8 @@ function generate_lines(number_of_lines, line, maximum_words_per_line){
     maximum_words_per_line = maximum_words_per_line || 10;
     var number_of_letters = 0;
     var number_of_words = 0;
+    var punctuation = '?!';
+    var special = 'áäčďěíňóůöřšťúüýž';
     var stanza = number_of_lines > 1
       ? .1
       : 0;
@@ -36,8 +38,14 @@ function generate_lines(number_of_lines, line, maximum_words_per_line){
             }
 
             while(number_of_letters > 0){
-                block = consonants[random_number(21)]
-                  + vowels[random_number(5)];
+                block = consonants[random_number(consonants.length)];
+
+                if(Math.random() < .05){
+                    block += special[random_number(special.length)];
+
+                }else{
+                    block += vowels[random_number(vowels.length)];
+                }
 
                 // Random chance to have vowel before consonant.
                 if(Math.random() < .3){
@@ -65,13 +73,17 @@ function generate_lines(number_of_lines, line, maximum_words_per_line){
 
         // Only add punctuation to lines.
         if(line){
-            if(Math.random() < .1){
-                lines += '!';
+            var added = false;
 
-            }else if(Math.random() < .1){
-                lines += '?';
+            for(var id in punctuation){
+                if(Math.random() < .1){
+                    lines += punctuation[id];
+                    added = true;
+                    break;
+                }
+            }
 
-            }else{
+            if(!added){
                 lines += '.';
             }
         }
