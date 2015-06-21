@@ -9,6 +9,7 @@ hr{
 input{
     background: #000;
     color: #aaa;
+    cursor: pointer;
 }
 #poem-title{
     font-size: 120%;
