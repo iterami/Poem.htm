@@ -1,3 +1,5 @@
+'use strict';
+
 function generate(){
     document.getElementById('poem-author').innerHTML = generate_lines(1, false, 3);
     document.getElementById('poem-title').innerHTML = generate_lines(1, false);
