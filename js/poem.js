@@ -21,7 +21,7 @@ function generate_lines(number_of_lines, line, maximum_words_per_line){
       : 0;
     var vowels = 'aeiou';
 
-    if(line == void(0)){
+    if(line == void 0){
         var line = true;
     }
 
