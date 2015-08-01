@@ -1,8 +1,12 @@
 'use strict';
 
 function generate(){
-    document.getElementById('poem-author').innerHTML = generate_lines(1, false, 3);
-    document.getElementById('poem-title').innerHTML = generate_lines(1, false);
+    var author = generate_lines(1, false, 3);
+    var title = generate_lines(1, false);
+
+    document.getElementById('poem-author').innerHTML = author;
+    document.getElementById('poem-title').innerHTML = title
+    document.title = title + ' -by- ' + author + ' - Poem.htm';
     document.getElementById('poem').innerHTML = generate_lines(random_number(23) + 1);
 }
 
@@ -88,13 +92,13 @@ function generate_lines(number_of_lines, line, maximum_words_per_line){
             if(!added){
                 lines += '.';
             }
-        }
 
-        lines += '<br>';
-
-        // Chance of new stanza.
-        if(stanza > Math.random()){
             lines += '<br>';
+
+            // Chance of new stanza.
+            if(stanza > Math.random()){
+                lines += '<br>';
+            }
         }
 
         number_of_lines--;
