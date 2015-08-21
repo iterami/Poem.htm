@@ -19,6 +19,7 @@ function generate_lines(number_of_lines, line, maximum_words_per_line){
     var number_of_letters = 0;
     var number_of_words = 0;
     var punctuation = '?!';
+    var rare = '\'';
     var special = 'áäčďěíňóůöřšťúüýž';
     var stanza = number_of_lines > 1
       ? .1
@@ -46,7 +47,10 @@ function generate_lines(number_of_lines, line, maximum_words_per_line){
             while(number_of_letters > 0){
                 block = consonants[random_number(consonants.length)];
 
-                if(Math.random() < .05){
+                if(Math.random() < .01){
+                    block += rare[random_number(rare.length)];
+
+                }else if(Math.random() < .05){
                     block += special[random_number(special.length)];
 
                 }else{
