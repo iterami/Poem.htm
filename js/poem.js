@@ -115,13 +115,13 @@ function random_number(i){
     return Math.floor(Math.random() * i);
 }
 
-window.onkeydown = function(e){
-    var key = e.keyCode || e.which;
-
-    // Enter: generate()
-    if(key === 13){
-        generate();
-    }
+window.onload = function(e){
+    init_input(
+      {
+        13: {
+          'todo': generate,
+        },
+      }
+    );
+    generate();
 };
-
-window.onload = generate;
