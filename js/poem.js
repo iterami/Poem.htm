@@ -121,4 +121,6 @@ window.onload = function(e){
     );
 
     generate();
+
+    document.getElementById('generate').onclick = generate;
 };
