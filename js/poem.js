@@ -7,7 +7,9 @@ function generate(){
     document.getElementById('poem-author').innerHTML = author;
     document.getElementById('poem-title').innerHTML = title
     document.title = title + ' -by- ' + author + ' - Poem.htm';
-    document.getElementById('poem').innerHTML = generate_lines(random_integer(23) + 1);
+    document.getElementById('poem').innerHTML = generate_lines(random_integer({
+      'max': 23,
+    }) + 1);
 }
 
 function generate_lines(number_of_lines, line, maximum_words_per_line){
@@ -32,10 +34,14 @@ function generate_lines(number_of_lines, line, maximum_words_per_line){
 
     while(number_of_lines > 0){
         capitalize = true;
-        number_of_words = random_integer(maximum_words_per_line) + 1;
+        number_of_words = random_integer({
+          'max': maximum_words_per_line,
+        }) + 1;
 
         while(number_of_words > 0){
-            number_of_letters = random_integer(5) + 1;
+            number_of_letters = random_integer({
+              'max': 5,
+            }) + 1;
 
             // Things that aren't lines are capitalized
             //   or chance for first letter of word to be capitalized.
@@ -45,16 +51,24 @@ function generate_lines(number_of_lines, line, maximum_words_per_line){
             }
 
             while(number_of_letters > 0){
-                block = consonants[random_integer(consonants.length)];
+                block = consonants[random_integer({
+                  'max': consonants.length,
+                })];
 
                 if(Math.random() < .01){
-                    block += rare[random_integer(rare.length)];
+                    block += rare[random_integer({
+                      'max': rare.length,
+                    })];
 
                 }else if(Math.random() < .05){
-                    block += special[random_integer(special.length)];
+                    block += special[random_integer({
+                      'max': special.length,
+                    })];
 
                 }else{
-                    block += vowels[random_integer(vowels.length)];
+                    block += vowels[random_integer({
+                      'max': vowels.length,
+                    })];
                 }
 
                 // Random chance to have vowel before consonant.
