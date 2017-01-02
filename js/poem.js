@@ -126,13 +126,13 @@ function generate_lines(number_of_lines, line, maximum_words_per_line){
 }
 
 window.onload = function(e){
-    input_init(
-      {
+    input_init({
+      'keybinds': {
         13: {
           'todo': generate,
         },
-      }
-    );
+      },
+    });
 
     generate();
 
