@@ -137,8 +137,8 @@ function generate_lines(number_of_lines, line, maximum_words_per_line){
     return lines;
 }
 
-window.onload = function(e){
-    core_input_init({
+function repo_init(){
+    core_input_binds_add({
       'keybinds': {
         13: {
           'todo': generate,
@@ -149,4 +149,4 @@ window.onload = function(e){
     generate();
 
     document.getElementById('generate').onclick = generate;
-};
+}
