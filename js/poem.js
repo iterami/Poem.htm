@@ -138,7 +138,7 @@ function generate_lines(number_of_lines, line, maximum_words_per_line){
 }
 
 function repo_init(){
-    core_input_binds_add({
+    core_events_bind({
       'keybinds': {
         13: {
           'todo': generate,
