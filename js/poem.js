@@ -139,14 +139,12 @@ function generate_lines(number_of_lines, line, maximum_words_per_line){
 
 function repo_init(){
     core_repo_init({
-      'title': 'Poem.htm',
-    });
-    core_events_bind({
       'keybinds': {
         13: {
           'todo': generate,
         },
       },
+      'title': 'Poem.htm',
     });
 
     generate();
