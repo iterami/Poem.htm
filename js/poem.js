@@ -23,9 +23,6 @@ function generate_lines(number_of_lines, line, maximum_words_per_line){
     var punctuation = '?!';
     var rare = '\'';
     var special = 'áäčďěíňóůöřšťúüýž';
-    var stanza = number_of_lines > 1
-      ? .1
-      : 0;
     var vowels = 'aeiou';
 
     if(line == void 0){
@@ -123,11 +120,13 @@ function generate_lines(number_of_lines, line, maximum_words_per_line){
 
             lines += '<br>';
 
-            // Chance of new stanza.
-            if(core_random_boolean({
-              'chance': stanza,
-            })){
-                lines += '<br>';
+            // Chance of new stanza if multiple lines.
+            if(number_of_lines > 1){
+                if(core_random_boolean({
+                  'chance': .1,
+                })){
+                    lines += '<br>';
+                }
             }
         }
 
