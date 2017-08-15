@@ -13,7 +13,6 @@ function generate(){
 }
 
 function generate_lines(number_of_lines, line, maximum_words_per_line){
-    var block = '';
     var capitalize = true;
     var consonants = 'bcdfghjklmnpqrstvwxyz';
     var lines = '';
@@ -50,7 +49,7 @@ function generate_lines(number_of_lines, line, maximum_words_per_line){
             }
 
             while(number_of_letters > 0){
-                block = consonants[core_random_integer({
+                var block = consonants[core_random_integer({
                   'max': consonants.length,
                 })];
 
