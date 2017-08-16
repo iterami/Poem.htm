@@ -137,6 +137,7 @@ function generate_lines(number_of_lines, line, maximum_words_per_line){
 
 function repo_init(){
     core_repo_init({
+      'info': '<input id=generate type=button value="Generate [ENTER]">',
       'keybinds': {
         13: {
           'todo': generate,
@@ -147,5 +148,8 @@ function repo_init(){
 
     generate();
 
-    document.getElementById('generate').onclick = generate;
+    document.getElementById('generate').onclick = function(){
+        generate();
+        core_escape();
+    };
 }
