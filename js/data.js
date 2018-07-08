@@ -1,8 +1,8 @@
 'use strict';
 
 function generate(){
-    var author = generate_lines(1, false, 3);
-    var title = generate_lines(1, false);
+    let author = generate_lines(1, false, 3);
+    let title = generate_lines(1, false);
 
     document.getElementById('poem-author').innerHTML = author;
     document.getElementById('poem-title').innerHTML = title
@@ -13,19 +13,19 @@ function generate(){
 }
 
 function generate_lines(number_of_lines, line, maximum_words_per_line){
-    var capitalize = true;
-    var consonants = 'bcdfghjklmnpqrstvwxyz';
-    var lines = '';
+    let capitalize = true;
+    let consonants = 'bcdfghjklmnpqrstvwxyz';
+    let lines = '';
     maximum_words_per_line = maximum_words_per_line || 10;
-    var number_of_letters = 0;
-    var number_of_words = 0;
-    var punctuation = '?!';
-    var rare = '\'';
-    var special = 'áäčďěíňóůöřšťúüýž';
-    var vowels = 'aeiou';
+    let number_of_letters = 0;
+    let number_of_words = 0;
+    let punctuation = '?!';
+    let rare = '\'';
+    let special = 'áäčďěíňóůöřšťúüýž';
+    let vowels = 'aeiou';
 
     if(line == void 0){
-        var line = true;
+        let line = true;
     }
 
     while(number_of_lines > 0){
@@ -49,7 +49,7 @@ function generate_lines(number_of_lines, line, maximum_words_per_line){
             }
 
             while(number_of_letters > 0){
-                var block = consonants[core_random_integer({
+                let block = consonants[core_random_integer({
                   'max': consonants.length,
                 })];
 
@@ -101,9 +101,9 @@ function generate_lines(number_of_lines, line, maximum_words_per_line){
 
         // Only add punctuation to lines.
         if(line){
-            var added = false;
+            let added = false;
 
-            for(var id in punctuation){
+            for(let id in punctuation){
                 if(core_random_boolean({
                   'chance': .1,
                 })){
