@@ -24,7 +24,7 @@ function generate_lines(number_of_lines, line, maximum_words_per_line){
     let special = 'áäčďěíňóůöřšťúüýž';
     let vowels = 'aeiou';
 
-    if(line == void 0){
+    if(line === void 0){
         line = true;
     }
 
