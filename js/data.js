@@ -4,8 +4,8 @@ function generate(){
     let author = generate_lines(1, false, 3);
     let title = generate_lines(1, false);
 
-    document.getElementById('poem-author').innerHTML = author;
-    document.getElementById('poem-title').innerHTML = title
+    document.getElementById('poem-author').textContent = author;
+    document.getElementById('poem-title').textContent = title
     document.title = title + ' -by- ' + author + ' - Poem.htm';
     document.getElementById('poem').innerHTML = generate_lines(core_random_integer({
       'max': 23,
