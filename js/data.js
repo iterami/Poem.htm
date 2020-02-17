@@ -1,8 +1,8 @@
 'use strict';
 
 function generate(){
-    let author = generate_lines(1, false, 3);
-    let title = generate_lines(1, false);
+    const author = generate_lines(1, false, 3);
+    const title = generate_lines(1, false);
 
     document.getElementById('poem-author').textContent = author;
     document.getElementById('poem-title').textContent = title
@@ -14,15 +14,15 @@ function generate(){
 
 function generate_lines(number_of_lines, line, maximum_words_per_line){
     let capitalize = true;
-    let consonants = 'bcdfghjklmnpqrstvwxyz';
+    const consonants = 'bcdfghjklmnpqrstvwxyz';
     let lines = '';
     maximum_words_per_line = maximum_words_per_line || 10;
     let number_of_letters = 0;
     let number_of_words = 0;
-    let punctuation = '?!';
-    let rare = '\'';
-    let special = 'áäčďěíňóůöřšťúüýž';
-    let vowels = 'aeiou';
+    const punctuation = '?!';
+    const rare = '\'';
+    const special = 'áäčďěíňóůöřšťúüýž';
+    const vowels = 'aeiou';
 
     if(line === void 0){
         line = true;
@@ -103,7 +103,7 @@ function generate_lines(number_of_lines, line, maximum_words_per_line){
         if(line){
             let added = false;
 
-            for(let id in punctuation){
+            for(const id in punctuation){
                 if(core_random_boolean({
                     'chance': .1,
                   })){
