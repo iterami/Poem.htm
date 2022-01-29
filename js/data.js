@@ -39,8 +39,6 @@ function generate_lines(number_of_lines, line, maximum_words_per_line){
               'max': 5,
             }) + 1;
 
-            // Things that aren't lines are capitalized
-            //   or chance for first letter of word to be capitalized.
             if(!line
               || core_random_boolean({
                 'chance': .1,
@@ -73,7 +71,6 @@ function generate_lines(number_of_lines, line, maximum_words_per_line){
                     })];
                 }
 
-                // Random chance to have vowel before consonant.
                 if(core_random_boolean({
                     'chance': .3,
                   })){
@@ -91,7 +88,6 @@ function generate_lines(number_of_lines, line, maximum_words_per_line){
                 number_of_letters--;
             }
 
-            // If not last word, add a space.
             if(number_of_words > 1){
                 lines += ' ';
             }
@@ -99,7 +95,6 @@ function generate_lines(number_of_lines, line, maximum_words_per_line){
             number_of_words--;
         }
 
-        // Only add punctuation to lines.
         if(line){
             let added = false;
 
@@ -119,7 +114,6 @@ function generate_lines(number_of_lines, line, maximum_words_per_line){
 
             lines += '<br>';
 
-            // Chance of new stanza if multiple lines.
             if(number_of_lines > 1){
                 if(core_random_boolean({
                     'chance': .1,
