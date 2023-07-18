@@ -128,3 +128,23 @@ function generate_lines(number_of_lines, line, maximum_words_per_line){
 
     return lines;
 }
+
+function repo_init(){
+    core_repo_init({
+      'events': {
+        'generate': {
+          'onclick': core_repo_reset,
+        },
+      },
+      'info': '<input id=generate type=button value=Generate>',
+      'keybinds': {
+        13: {
+          'todo': generate,
+        },
+      },
+      'reset': generate,
+      'title': 'Poem.htm',
+    });
+
+    generate();
+}
