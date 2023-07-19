@@ -136,7 +136,6 @@ function repo_init(){
           'onclick': core_repo_reset,
         },
       },
-      'info': '<input id=generate type=button value=Generate>',
       'keybinds': {
         13: {
           'todo': generate,
