@@ -40,9 +40,7 @@ function generate_lines(number_of_lines, line, maximum_words_per_line){
             }) + 1;
 
             if(!line
-              || core_random_boolean({
-                'chance': .1,
-              })){
+              || core_random_boolean(.1)){
                 capitalize = true;
             }
 
@@ -51,16 +49,12 @@ function generate_lines(number_of_lines, line, maximum_words_per_line){
                   'max': consonants.length,
                 })];
 
-                if(core_random_boolean({
-                    'chance': .01,
-                  })){
+                if(core_random_boolean(.01)){
                     block += rare[core_random_integer({
                       'max': rare.length,
                     })];
 
-                }else if(core_random_boolean({
-                    'chance': .05,
-                  })){
+                }else if(core_random_boolean(.05)){
                     block += special[core_random_integer({
                       'max': special.length,
                     })];
@@ -71,9 +65,7 @@ function generate_lines(number_of_lines, line, maximum_words_per_line){
                     })];
                 }
 
-                if(core_random_boolean({
-                    'chance': .3,
-                  })){
+                if(core_random_boolean(.3)){
                     block = block.split('').reverse().join('');
                 }
 
@@ -99,9 +91,7 @@ function generate_lines(number_of_lines, line, maximum_words_per_line){
             let added = false;
 
             for(const id in punctuation){
-                if(core_random_boolean({
-                    'chance': .1,
-                  })){
+                if(core_random_boolean(.1)){
                     lines += punctuation[id];
                     added = true;
                     break;
@@ -115,9 +105,7 @@ function generate_lines(number_of_lines, line, maximum_words_per_line){
             lines += '<br>';
 
             if(number_of_lines > 1){
-                if(core_random_boolean({
-                    'chance': .1,
-                  })){
+                if(core_random_boolean(.1)){
                     lines += '<br>';
                 }
             }
