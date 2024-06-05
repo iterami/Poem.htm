@@ -4,10 +4,14 @@ function generate(){
     const author = generate_lines(1, false, 3);
     const title = generate_lines(1, false);
 
-    document.getElementById('poem-author').textContent = author;
-    document.getElementById('poem-title').textContent = title
+    core_ui_update({
+      'ids': {
+        'poem-author': author,
+        'poem-title': title,
+      },
+    });
     document.title = title + ' -by- ' + author + ' - Poem.htm';
-    document.getElementById('poem').innerHTML = generate_lines(core_random_integer({
+    core_elements['poem'].innerHTML = generate_lines(core_random_integer({
       'max': 23,
     }) + 1);
 }
@@ -131,6 +135,9 @@ function repo_init(){
       },
       'reset': generate,
       'title': 'Poem.htm',
+      'ui-elements': [
+        'poem',
+      ],
     });
 
     generate();
