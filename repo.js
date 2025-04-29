@@ -125,7 +125,7 @@ function repo_init(){
     core_repo_init({
       'events': {
         'generate': {
-          'onclick': core_repo_reset,
+          'onclick': generate,
         },
       },
       'keybinds': {
@@ -133,7 +133,6 @@ function repo_init(){
           'todo': generate,
         },
       },
-      'reset': generate,
       'title': 'Poem.htm',
       'ui-elements': [
         'poem',
