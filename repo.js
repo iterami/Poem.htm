@@ -11,9 +11,7 @@ function generate(){
       },
     });
     document.title = title + ' -by- ' + author + ' - Poem.htm';
-    core_elements['poem'].innerHTML = generate_lines(core_random_integer({
-      'max': 23,
-    }) + 1);
+    core_elements['poem'].innerHTML = generate_lines(core_random_integer(23) + 1);
 }
 
 function generate_lines(number_of_lines, line, maximum_words_per_line){
@@ -34,14 +32,10 @@ function generate_lines(number_of_lines, line, maximum_words_per_line){
 
     while(number_of_lines > 0){
         capitalize = true;
-        number_of_words = core_random_integer({
-          'max': maximum_words_per_line,
-        }) + 1;
+        number_of_words = core_random_integer(maximum_words_per_line) + 1;
 
         while(number_of_words > 0){
-            number_of_letters = core_random_integer({
-              'max': 5,
-            }) + 1;
+            number_of_letters = core_random_integer(5) + 1;
 
             if(!line
               || core_random_boolean(.1)){
@@ -49,24 +43,16 @@ function generate_lines(number_of_lines, line, maximum_words_per_line){
             }
 
             while(number_of_letters > 0){
-                let block = consonants[core_random_integer({
-                  'max': consonants.length,
-                })];
+                let block = consonants[core_random_integer(consonants.length)];
 
                 if(core_random_boolean(.01)){
-                    block += rare[core_random_integer({
-                      'max': rare.length,
-                    })];
+                    block += rare[core_random_integer(rare.length)];
 
                 }else if(core_random_boolean(.05)){
-                    block += special[core_random_integer({
-                      'max': special.length,
-                    })];
+                    block += special[core_random_integer(special.length)];
 
                 }else{
-                    block += vowels[core_random_integer({
-                      'max': vowels.length,
-                    })];
+                    block += vowels[core_random_integer(vowels.length)];
                 }
 
                 if(core_random_boolean(.3)){
