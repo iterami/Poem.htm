@@ -11,7 +11,7 @@ function generate(){
       },
     });
     document.title = title + ' -by- ' + author + ' - Poem.htm';
-    core_elements['poem'].innerHTML = generate_lines(core_random_integer(23) + 1);
+    core_elements.poem.innerHTML = generate_lines(core_random_integer(23) + 1);
 }
 
 function generate_lines(number_of_lines, line, maximum_words_per_line){
