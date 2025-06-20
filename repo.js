@@ -120,7 +120,7 @@ function repo_init(){
         },
       },
       'title': 'Poem.htm',
-      'ui-elements': [
+      'ui_elements': [
         'poem',
       ],
     });
