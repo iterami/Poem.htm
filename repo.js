@@ -116,7 +116,7 @@ function repo_init(){
       },
       'keybinds': {
         'Enter': {
-          'todo': generate,
+          'down': generate,
         },
       },
       'title': 'Poem.htm',
