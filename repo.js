@@ -120,6 +120,7 @@ function repo_init(){
         },
       },
       'title': 'Poem.htm',
+      'ui': '<button id=generate type=button>Generate</button>',
       'ui_elements': [
         'poem',
       ],
